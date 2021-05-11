@@ -35,6 +35,8 @@ export const handler: Handler = async (
         "Access-Control-Allow-Headers": "Content-Type",
         "Access-Control-Allow-Credentials": true,
         "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE",
+        "Access-Control-Allow-Headers":
+          "Origin, X-Requested-With, Content-Type, Accept, Authorization",
       },
       body: JSON.stringify({
         ...res.data,
