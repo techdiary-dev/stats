@@ -26,13 +26,15 @@ export const handler: Handler = async (
     const res = await axios.get(api, {
       headers: {
         Authorization: "Bearer " + process.env.API_TOKEN,
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Headers": "Content-Type",
-        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE",
       },
     });
     return {
       statusCode: 200,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "Content-Type",
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE",
+      },
       body: JSON.stringify({
         ...res.data,
       }),
